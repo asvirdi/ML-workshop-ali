@@ -9,9 +9,9 @@
 
 1. Open terminal or command prompt 
 
-2. Go to a directory of your preference (eg. C/Development)
+2. Go to a directory of your preference (eg. C:/Development)
 
-3. Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C/Development)
+3. Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C:/Development)
 
 4. If you are not able to clone, the repository folder is also available in your email. You can download and open this to continue.
 
@@ -63,7 +63,7 @@ import time
 ```
 
 
-21.The following code disables some warnings and setups up logging etc. to assist in our development. Copy and paste this.
+21.The following code disables some warnings and setups logging etc. to assist in our development. Copy and paste this.
   
   
   
@@ -83,7 +83,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 
-22.We need a function to take data from Elastic and convert it into a Pandas DataFrame so its easy to manipulate. Construct a function called `dataConversion` that will do this for us in `intrusion_detection`.
+22.We need a function to take data from Elastic and convert it into a Pandas DataFrame so its' easy to manipulate. Construct a function called `dataConversion` that will do this for us in `intrusion_detection`.
 
 ```
 def dataConversion(data):
@@ -100,7 +100,7 @@ What if we give numerical values to such data? For example, for days in a week -
 
 25.Instead we will use One Hot Encoding to pre-process our data. The process takes categorical variables and converts it into numerical representation without an arbitrary ordering
 
-26.One Hot Encoding will take the top table 
+26.One Hot Encoding will take this table 
 
 | Week | 
 | ----- |
@@ -141,8 +141,9 @@ We can feed selective features to our training model based on domain knowledge a
 After one-hot encoding, our labels will be 
 ```
 'label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
-                                 'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.', 'label_pod.', 'label_portsweep.', \
-                                 'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.'                            
+'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.', 'label_pod.',\
+ 'label_portsweep.', \
+'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.'                            
                                 
 ```
 Assign them to a variable called `encodedData`
@@ -160,7 +161,7 @@ rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
 ```                             
 
 
-31.Now, we will run out trained model on test data -- passing a similar data frame as we did before
+31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set
 
 ```
 predictionsrf = rf.predict(encodedTestData[['duration', 'logged_in']])
