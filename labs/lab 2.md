@@ -164,13 +164,13 @@ rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
 31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set
 
 ```
-predictionsrf = rf.predict(encodedTestData[['duration', 'logged_in']])
+predictionsrf = rf.predict(encodedData[['duration', 'logged_in']])
 ```
 
 32.You can find the accuracy score of your model by passing in the labels from the data ( the truth ) and the predictions returned by our model.
 
 ```
-accuractyScorerf = accuracy_score(encodedTestLabels, predictionsrf)
+accuractyScorerf = accuracy_score(encodedLabels, predictionsrf)
 print(accuracyScorerf)
 ```
     
@@ -338,3 +338,17 @@ def trainAndTestModel():
 
 ```
 
+```
+
+def main():
+    starttime = time.time()
+    logger.info('start time: {}'.format(starttime))
+
+    trainAndTestModel()
+
+    endtime = time.time() - starttime
+    logger.info('run time: {}'.format(endtime))
+
+if __name__=="__main__":
+    main()
+```

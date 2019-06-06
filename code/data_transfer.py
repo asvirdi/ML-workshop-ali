@@ -1,6 +1,5 @@
 import elasticsearch5
 import elasticsearch5.helpers
-import pandas
 import logging
 import urllib3
 
