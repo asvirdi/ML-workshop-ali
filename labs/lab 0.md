@@ -33,9 +33,9 @@ Go to https://www.python.org/downloads/ and dowload Python 3.7.x
 * PIP is a python package manager
 * It needs to be configured to allow you to download python packages through the artifactory mirror
 * Create a pip config file with one of the following configurations:
-    * Windows:   %APPDATA%\pip\pip.ini
-    * Unix: $HOME/.config/pip/pip.conf
-    * Mac:  $HOME/.pip/pip.conf   
+    * Windows:   `%APPDATA%\pip\pip.ini`
+    * Unix:   `$HOME/.config/pip/pip.conf`
+    * Mac:   `$HOME/.pip/pip.conf`   
  
 
 * Open the file in your favorite text editor and add the following code:
