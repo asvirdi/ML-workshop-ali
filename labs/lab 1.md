@@ -1,6 +1,6 @@
 # Lab 1
 
-##Estimated time for completion: 30 minutes
+## Estimated time for completion: 30 minutes
 ## Some Background
 
 The problem under focus in this workshop is how to detect an intrusion in a network using network traffic data. We will build a predictive model using open source Python libraries that will help us solve this problem.
