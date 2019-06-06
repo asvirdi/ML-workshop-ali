@@ -27,7 +27,7 @@
 
 10. Activate your virtual environment `source venv/bin/activate` on Macbook or `venv\bin\activate` on Windows
 
-11. Run `pip install -r requirements.txt` to install packages in this virtual environment
+11. Run `pip install -r requirements.txt` to install packages in this virtual environment. Minimize your terminal window.
 
 12. Now we will go over the code. Data has been processed and made available in Elasticsearch for this workshop
 
@@ -48,7 +48,7 @@
 20. The following code imports important modules and libraries that we will when building our models. Copy and paste this to the top of the `intrusion_detection` file
 
 
-
+## Starting to code
 
 ```
 import data_transfer
@@ -190,6 +190,8 @@ if __name__=="__main__":
     main()
 
 ```
+
+## Seeing ML in action
 
 34.We will now try a custom `trainAndTestModel` that tries out 5 different models  
 
@@ -335,3 +337,4 @@ def trainAndTestModel():
 
 
 ```
+
