@@ -17,13 +17,6 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s')
 logger.setLevel(logging.DEBUG)
 
 
-data_dir = "~/Downloads/"
-
-train_data = data_dir + "kddcup.data"
-train_labels = data_dir + "training_attack_types.txt"
-test_data = data_dir + "corrected"
-test_labels = data_dir + "kddcup.names.txt"
-train_data_10_percent = data_dir + "kddcup.data_10_percent"
 index='kddcup-data'
 elasitcUsername = 'SKFT0SRVsaifgESread'
 elasticPassword = ''
