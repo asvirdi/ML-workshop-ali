@@ -15,7 +15,7 @@ It is a smart way for developers and technicians to collaborate on work
 
 * If you are not able to clone, the repository folder is also available in your email. You can download and open this to continue.
 
-* Go into the **workshop** directory
+* Go into the **workshop** directory -- `cd workshop`
 
 * You will setup a virutal environment. This makes sure any packages you install for this workshop do not intefere with your system's python packages
 
