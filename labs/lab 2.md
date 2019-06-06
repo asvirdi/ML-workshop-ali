@@ -17,15 +17,16 @@ It is a smart way for developers and technicians to collaborate on work
 
 * Go into the **workshop** directory -- `cd workshop`
 
-* You will setup a virutal environment. This makes sure any packages you install for this workshop do not intefere with your system's python packages
+* Install the virtualenv package using pip -- `pip install virtualenv --user`
 
-* Install the virtualenv package using pip -- `pip install virtualenv`
+* You will setup a virtual environment. This makes sure any packages you install for this workshop do not intefere with your system's python packages
+
 
 * You should see 2 directories, `code` and `labs` and 1 `requirements.txt` file. The reqiurements file lists the packages you require for this workshop
 
 * Data has been processed and made available in Elasticsearch for this workshop
 
-* Find `elasticPassword` (cmd+f `elasticPassword` on Mac or ctrl+f`elasticPassword` on Windows)
+* Find `elasticPassword` (cmd+f `elasticPassword` on Mac or ctrl+f `elasticPassword` on Windows)
 
 * Fill out the string with password on the white board
 
