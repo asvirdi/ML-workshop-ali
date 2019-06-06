@@ -42,17 +42,17 @@ Some features can be derived from our dataset, which is present [here](http://kd
 We will divide the features into 3 main categorizes: Basic, Content and Traffic. For example, Basic Features are:
 
 
-Feature name | Description | Type
+| Feature name | Description | Type
 -------------- | ----------- | ----
- duration | length (number of seconds) of the connection | continuous
-protocol_type |	type of the protocol, e.g. tcp, udp, etc. |	discrete
-service | network service on the destination, e.g., http, telnet, etc. |discrete
-src_bytes |	number of data bytes from source to destination  |	continuous
-dst_bytes |	number of data bytes from destination to source  | continuous
-flag | normal or error status of the connection  | discrete 
-land | 1 if connection is from/to the same host/port; 0 otherwise | discrete
-wrong_fragment | number of ``wrong'' fragments  | continuous
-urgent | number of urgent packets  | continuous
+| duration | length (number of seconds) of the connection | continuous
+| protocol_type |	type of the protocol, e.g. tcp, udp, etc. |	discrete
+| service | network service on the destination, e.g., http, telnet, etc. |discrete
+| src_bytes |	number of data bytes from source to destination  |	continuous
+| dst_bytes |	number of data bytes from destination to source  | continuous
+| flag | normal or error status of the connection  | discrete 
+| land | 1 if connection is from/to the same host/port; 0 otherwise | discrete
+| wrong_fragment | number of ``wrong'' fragments  | continuous
+| urgent | number of urgent packets  | continuous
 
 
 <!-- differentiate between continous and discrete -->
