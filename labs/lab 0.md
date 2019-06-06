@@ -31,6 +31,7 @@ Go to https://www.python.org/downloads/ and dowload Python 3.7.x
     
 ### PIP configuration
 * PIP is a python package manager
+* Check if pip is configured by running `pip install elasticsearch`. If install fails, pip is not configured correctly.
 * It needs to be configured to allow you to download python packages through the artifactory mirror
 * Create a pip config file with one of the following configurations (you will need to make the directories if there are not existent):
     * Windows:   %APPDATA%\pip\pip.ini
@@ -45,6 +46,7 @@ index-url = https://rbcartifactory.fg.rbc.com/artifactory/api/pypi/pypi/simple
 trusted-host = rbcartifactory.fg.rbc.com 
 ```   
 
+* 
 
     
     
