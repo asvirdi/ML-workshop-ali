@@ -29,9 +29,9 @@
 
 11. Run `pip install -r requirements.txt` to install packages in this virtual environment
 
-12. Data has been processed and made available in Elasticsearch for this workshop
+12. Now we will go over the code. Data has been processed and made available in Elasticsearch for this workshop
 
-13. Find `elasticPassword` (cmd+f `elasticPassword` on Mac or ctrl+f `elasticPassword` on Windows)
+13. Find `elasticPassword` (cmd+f `elasticPassword` on Mac or ctrl+f `elasticPassword` on Windows) in the `data_transfer` module.
 
 14. Fill out the string with password on the white board
 
