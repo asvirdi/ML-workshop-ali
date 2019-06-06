@@ -161,7 +161,7 @@ rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
 ```                             
 
 
-31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set
+31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set based on the earlier training.
 
 ```
 predictionsrf = rf.predict(encodedTestData[['duration', 'logged_in']])
