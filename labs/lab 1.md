@@ -1,6 +1,6 @@
 # Lab 1
 
-## Estimated time for completion: 30 minutes
+##Estimated time for completion: 30 minutes
 ## Some Background
 
 The problem under focus in this workshop is how to detect an intrusion in a network using network traffic data. We will build a predictive model using open source Python libraries that will help us solve this problem.
@@ -58,11 +58,16 @@ urgent | number of urgent packets  | continuous
 <!-- differentiate between continous and discrete -->
 
 To gain more insight into the different kinds of features dervied from domain knowledge, you can revisit the task description.
-Wait for instructor's instructions after you have completed till this point
+
+
+**Wait for further instructions**
+
 
 ## Digging into the data
 
-The instructor will load a sample dataset into a Pandas DataFrame and will observe the data with the class
+The instructor will load a sample dataset into a Pandas DataFrame and will observe the data with the class.
+
+<!-- tell students that they do not need to follow but can if they want to -->
 
 ```python
 ## importing pandas
