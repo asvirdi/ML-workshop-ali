@@ -1,4 +1,4 @@
-#Lab 0 
+# Lab 0 
 ## Estimated time for completion: 15 minutes
 
 ## Setup apd pre-requisites for this lab
