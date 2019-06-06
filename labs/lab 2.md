@@ -7,7 +7,11 @@
 * We are going to `clone` this code repository on our workstations using Git we setup earlier. Cloning gets us a copy of an exisiting Git repository.
 It is a smart way for developers and technicians to collaborate on work
 
-* Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory where of your preference
+* Open terminal or command prompt 
+
+* Go to a directory of your preference (eg. C/Development)
+
+* Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C/Development)
 
 * If you are not able to clone, the repository folder is also available in your email. You can download and open this to continue.
 
