@@ -135,7 +135,7 @@ def oneHotEncoding(data):
 28.Next we will train our model using the Random Forest Classifier from scikit-learn. We will use our data to incrementally improve our model's ability to distinguish between normal and malicious connections
 We can feed selective features to our training model based on domain knowledge and/or educated intuition
 
-29.Write a function called `trainAndTestModel` . You will get data from elastic `data = data_transfer.get_data_from_elastic(index='kddcup-data')
+29.**Write a function** called `trainAndTestModel` . You will get data from elastic `data = data_transfer.get_data_from_elastic(index='kddcup-data')
 `, followed by converting into dataframe `dataframe = dataConversion(data)` and then one-hot encoding `encodedData = oneHotEncoding(dataframe)
 ` . You will need to initialize a `rf = RandomForestClassifier()` and create a partial data frame of just the labels from the input encoded data.
 After one-hot encoding, our labels will be 
