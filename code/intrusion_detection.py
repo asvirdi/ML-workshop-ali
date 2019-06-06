@@ -1,4 +1,4 @@
-from code import data_transfer
+import data_transfer
 from sklearn.ensemble import RandomForestClassifier
 import urllib3
 import logging
@@ -33,7 +33,7 @@ def oneHotEncoding(data):
     return encodedData
 
 
-def randomForestTrain():
+def trainAndTestModel():
     data = data_transfer.get_data_from_elastic(index='kddcup-data')
     #print(len(data))
     dataframe = dataConversion(data)
@@ -140,16 +140,16 @@ def randomForestTrain():
     logger.info('calculating confusion matrixes')
     ## comparing predictions with the true labels
     confusionMatrix1 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf1)
-    #print(confusionMatrix1)
+    print(confusionMatrix1)
 
     confusionMatrix2 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf2)
-    #print(confusionMatrix2)
+    print(confusionMatrix2)
 
     confusionMatrix3 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf3)
-    #print(confusionMatrix3)
+    print(confusionMatrix3)
 
     confusionMatrix4 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf4)
-    #print(confusionMatrix4)
+    print(confusionMatrix4)
 
     confusionMatrix5 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf5)
     print(confusionMatrix5)
@@ -182,7 +182,7 @@ def randomForestTrain():
 def main():
     starttime = time.time()
     logger.info('start time: {}'.format(starttime))
-    randomForestTrain()
+    trainAndTestModel()
     endtime = starttime - time.time()
     logger.info('run time: {}'.format(endtime))
 

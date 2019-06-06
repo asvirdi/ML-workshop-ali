@@ -10,7 +10,7 @@ To be able to build our machine learning model, we require data on which we can 
 Before proceeding further, lets hammer out some machine learning lingo:
 * Dataset: A set of data examples, that contain features important to solving the problem
 * Features: Important pieces of data that help us understand a problem that are fed in to a Machine Learning algorithm to help it learn.
-* Model: The representation (internal model) of a phenomenon that a Machine Learning algorithm has learnt. It learns this from the data it is shown during training. The model is the output you get after training an algorithm. For example, a decision tree algorithm would be trained and produce a decision tree model.
+* Model: The internal representation of a phenomenon that a Machine Learning algorithm has learnt. It learns this from the data it is shown during training. The model is the output you get after training an algorithm. For example, a decision tree algorithm would be trained and produce a decision tree model.
 
 There are more resources present at [Toward Data Science](https://towardsdatascience.com) for those anyone interested in digging deeper.
 
@@ -24,7 +24,7 @@ This dataset has been used widely in the data science community for research pur
 * The data is about 4 gigabytes of compressed binary TCP dump data from 7 weeks of network traffic. A LAN simulating a typical US Air Force LAN was setup by Lincoln Labs and the network was peppered with multiple attacks to collect and label this data.
 * What is a connection? 
     * A connection is a sequence of packets starting and ending at some well defined times
-* Network traffic can be categorized into 'good' normal connections and 'bad' malicious connections
+* Network traffic can be categorized into normal connections and malicious connections
 * The malicious traffic can be further sub-categorized into 4 main categories:
     * DOS - Denial of Service attack
     * R2L - unauthorized access from a remote machine
@@ -36,12 +36,11 @@ The rest of this section will dig deeper into the sub-categories of malicious tr
 
 ### Deriving Features from our data
 
-Circling back to our earlier definition of features, they are critical in helping us shape our problem and as input parameter to our algorithm
+Circling back to our earlier definition of features, they are critical in helping us shape our problem and as input parameter to our algorithm.
 Some features can be derived from our dataset, which is present [here](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html).
 
 We will divide the features into 3 main categorizes: Basic, Content and Traffic. For example, Basic Features are:
 
-                                Basic Features
 
 Feature name | Description | Type
 -------------- | ----------- | ----
@@ -56,7 +55,7 @@ wrong_fragment | number of ``wrong'' fragments  | continuous
 urgent | number of urgent packets  | continuous
 
 
-
+<!-- differentiate between continous and discrete -->
 
 To gain more insight into the different kinds of features dervied from domain knowledge, you can revisit the task description.
 Wait for instructor's instructions after you have completed till this point
@@ -65,7 +64,7 @@ Wait for instructor's instructions after you have completed till this point
 
 The instructor will load a sample dataset into a Pandas DataFrame and will observe the data with the class
 
-```
+```python
 ## importing pandas
 import pandas
 

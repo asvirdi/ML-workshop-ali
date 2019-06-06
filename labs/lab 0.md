@@ -1,4 +1,4 @@
-#Lab 0 
+# Lab 0 
 ## Estimated time for completion: 15 minutes
 
 ## Setup apd pre-requisites for this lab
@@ -32,11 +32,11 @@ Go to https://www.python.org/downloads/ and dowload Python 3.7.x
 ### PIP configuration
 * PIP is a python package manager
 * It needs to be configured to allow you to download python packages through the artifactory mirror
-* Create a pip config file with one of the following configurations:
+* Create a pip config file with one of the following configurations (you will need to make the directories if there are not existent):
     * Windows:   %APPDATA%\pip\pip.ini
     * Unix: $HOME/.config/pip/pip.conf
     * Mac:  $HOME/.pip/pip.conf   
- 
+
 
 * Open the file in your favorite text editor and add the following code:
 ```
