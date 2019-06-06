@@ -39,7 +39,7 @@
 
 16. Step into the `code` directory
 
-17. The `data_transfer` module is a python file that handles the data wrangling for our workshop. It is not our primal focus
+17. The `data_transfer` module is a python file that handles the data wrangling for our workshop. It is not our prime focus
 
 18. The `intrusion_detection` file is where we will build our detection system
 
@@ -161,7 +161,7 @@ rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
 ```                             
 
 
-31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set based on the earlier training.
+31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set
 
 ```
 predictionsrf = rf.predict(encodedTestData[['duration', 'logged_in']])
