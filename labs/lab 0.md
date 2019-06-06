@@ -7,7 +7,7 @@
 
 Go to https://www.python.org/downloads/ and dowload Python 3.7.x
 
-####On MacOS
+#### On MacOS
 * Open the downloaded file. 
 * Get admin rights through *Make me Admin - Launcher* in *Self Service*
 * Next,open the python installer, accept the license and follow the prompts to finish installation. 
