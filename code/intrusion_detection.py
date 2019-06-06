@@ -1,4 +1,4 @@
-import data_transfer
+from code import data_transfer
 from sklearn.ensemble import RandomForestClassifier
 import urllib3
 import logging
