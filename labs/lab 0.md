@@ -46,7 +46,7 @@ index-url = https://rbcartifactory.fg.rbc.com/artifactory/api/pypi/pypi/simple
 trusted-host = rbcartifactory.fg.rbc.com 
 ```   
 
-* 
+
 
     
     
