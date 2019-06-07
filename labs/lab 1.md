@@ -66,9 +66,8 @@ To gain more insight into the different kinds of features dervied from domain kn
 
 ## Digging into the data
 
-The instructor will load a sample dataset into a Pandas DataFrame and will observe the data with the class.
+The instructor will load a sample dataset into a Pandas DataFrame on his machine and will observe the data with the class. You **do not need** to do this on your machine but you can if you want to.
 
-<!-- tell students that they do not need to follow but can if they want to -->
 
 ```python
 ## importing pandas

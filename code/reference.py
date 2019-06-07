@@ -31,13 +31,25 @@ def oneHotEncoding(data):
 
 
 def trainAndTestModel():
-    data = data_transfer.get_data_from_elastic(index='kddcup-data')
+    data = pandas.read_csv('../data/test_data.csv')
+    headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
+               "urgent", "hot", "num_failed_logins" \
+        , "logged_in", "num_compromised", "root_shell", "su_attempted", "num_root", "num_file_creations", "num_shells",
+               "num_access_files", "num_outbound_cmds" \
+        , "is_host_login", "is_guest_login", "count", "srv_count", "serror_rate", "srv_serror_rate", "rerror_rate",
+               "srv_rerror_rate", "same_srv_rate" \
+        , "diff_srv_rate", "srv_diff_host_rate", "dst_host_count", "dst_host_srv_count", "dst_host_same_srv_rate",
+               "dst_host_diff_srv_rate", "dst_host_same_src_port_rate" \
+        , "dst_host_srv_diff_host_rate", "dst_host_serror_rate", "dst_host_srv_serror_rate", "dst_host_rerror_rate",
+               "dst_host_srv_rerror_rate", "label"]
+
     dataframe = dataConversion(data)
+    dataframe.columns = headers
     encodedData = oneHotEncoding(dataframe)
 
-    encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
+    encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.',\
                                  'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.',\
-                                  'label_pod.', 'label_portsweep.', \
+                                  'label_pod.', 'label_portsweep.',\
                                  'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.']]
 
     logger.info(msg='traing model rf1 on data')
@@ -87,7 +99,7 @@ def trainAndTestModel():
 
     ## getting the test dataset from elastic
     #logger.info(' pulling in test data from elastic')
-    #testData = data_transfer.get_data_from_elastic(index='kddcup-data')
+
     testData = data
     logger.info('converting test data into relevant data structures')
     testDataframe = dataConversion(testData)
