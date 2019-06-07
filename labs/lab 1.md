@@ -18,11 +18,10 @@ There are more resources present at [Toward Data Science](https://towardsdatasci
 ## The Dataset
 
 The network traffic data set we will use today was used for the The Third International Knowledge Discovery and Data Mining Tools Competition in 1999.
-This dataset has been used widely in the data science community for research purposes. The task description for the competition (and our workshop :) ) can be found [here](http://kdd.ics.uci.edu/databases/kddcup99/task.html).
+This dataset has been used widely in the data science community for research purposes. The detailed task description for the competition (and our workshop :) ) can be found [here](http://kdd.ics.uci.edu/databases/kddcup99/task.html).
 
 ### Getting up close with our data
-* Open the [link](http://kdd.ics.uci.edu/databases/kddcup99/task.html) to the task description and go over it
-* The data is about 4 gigabytes of compressed binary TCP dump data from 7 weeks of network traffic. A LAN simulating a typical US Air Force LAN was setup by Lincoln Labs and the network was peppered with multiple attacks to collect and label this data.
+* The original dataset is about 4 gigabytes of compressed binary TCP dump data from 7 weeks of network traffic. A LAN simulating a typical US Air Force LAN was setup by Lincoln Labs and the network was peppered with multiple attacks to collect and label this data.
 * What is a connection? 
     * A connection is a sequence of packets starting and ending at some well defined times
 * Network traffic can be categorized into normal connections and malicious connections
@@ -31,7 +30,8 @@ This dataset has been used widely in the data science community for research pur
     * R2L - unauthorized access from a remote machine
     * U2R - unauthorized access to local superuser (root) 
     * Probing, for example port scanning
-    
+* The original data set can be found [here](http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html) for reference
+* We will be using a subset of this data due to our limited time constraints. The data is present in our repo and we will go over it soon.     
 
 The rest of this section will dig deeper into the sub-categories of malicious traffic for those interested. Feel free to jump to the next section.
 
