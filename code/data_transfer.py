@@ -1,5 +1,3 @@
-import elasticsearch5
-import elasticsearch5.helpers
 import logging
 import urllib3
 import gzip
@@ -12,11 +10,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger('data_transfer_module')
 logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s')
 logger.setLevel(logging.DEBUG)
-
-
-index='kddcup-data'
-elasitcUsername = 'SKFT0SRVsaifgESread'
-elasticPassword = ''
 
 
 
