@@ -11,7 +11,7 @@
 * Run `python3 --version`. If python 3 is configured, you will get the version number. If you get an error, then follow the steps below to download Python
 
 #### On Windows
-* Run `python --version`. If python 3 is properly configured and add to your `PATH` variable, then you will get the version number. Otherwise, follow the steps below to download Python
+* Run `python --version`. If python 3 is properly configured and added to your `PATH` variable, then you will get the version number. Otherwise, follow the steps below to download Python
 
 Go to https://www.python.org/downloads/ and download Python 3.7.x (preferred)
 
