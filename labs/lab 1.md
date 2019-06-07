@@ -52,7 +52,7 @@ We will divide the features into 3 main categorizes: Basic, Content and Traffic.
 | dst_bytes |	number of data bytes from destination to source  | continuous
 | flag | normal or error status of the connection  | discrete 
 | land | 1 if connection is from/to the same host/port; 0 otherwise | discrete
-| wrong_fragment | number of ``wrong'' fragments  | continuous
+| wrong_fragment | number of "wrong" fragments  | continuous
 | urgent | number of urgent packets  | continuous
 
 
