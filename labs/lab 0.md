@@ -20,7 +20,7 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 #### On MacOS
 * Open the downloaded file. 
 * Get admin rights through *Make me Admin - Launcher* in *Self Service*
-* Next,open the python installer, accept the license and follow the prompts to finish installation. 
+* Next, open the python installer, accept the license and follow the prompts to finish installation. 
 * This will install Python 3 on your system along with Python 2.x already on your computer.
 
 
