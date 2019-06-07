@@ -36,7 +36,7 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
     * complete the installation
 
 #### Validate the python installation
-* Run `python3 --version` in a terminal on Mac or `python --version` on Windows make sure python is installed and ready for use on your system     
+* Run `python3 --version` in a terminal on Mac or `python --version` in a command prompt on Windows make sure python is installed and ready for use on your system     
         
     
 ### PIP configuration
