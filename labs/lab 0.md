@@ -5,7 +5,15 @@
 
 ### Python 3
 
-Go to https://www.python.org/downloads/ and dowload Python 3.7.x
+#### Check if your system already has python 3.x
+
+#### On MacOS
+* Run `python3 --version`. If python 3 is configured, you will get the version number. If you get an error, then follow the steps below to download Python
+
+#### On Windows
+* Run `python --version`. If python 3 is properly configured and add to your `PATH` variable, then you will get the version number. Otherwise, follow the steps below to download Python
+
+Go to https://www.python.org/downloads/ and download Python 3.7.x (preferred)
 
 #### On MacOS
 * Open the downloaded file. 
@@ -26,7 +34,7 @@ Go to https://www.python.org/downloads/ and dowload Python 3.7.x
     * complete the installation
 
 #### Validate the python installation
-* Run `python3 --version` in a terminal on Mac or pto make sure python is installed and ready for use on your system     
+* Run `python3 --version` in a terminal on Mac or `python --version` on Windows make sure python is installed and ready for use on your system     
         
     
 ### PIP configuration
