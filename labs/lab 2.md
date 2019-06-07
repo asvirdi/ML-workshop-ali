@@ -1,5 +1,6 @@
 # Lab 2
 
+## Estimated time for completion: 45 minutes
 ## Getting the code
 
 * The project code is available on [RBC Enterprise Github](https://rbcgithub.fg.rbc.com/kft0/workshop)
