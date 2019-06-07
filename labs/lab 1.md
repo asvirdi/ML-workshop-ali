@@ -10,6 +10,7 @@ To be able to build our machine learning model, we require data on which we can 
 Before proceeding further, lets hammer out some machine learning lingo:
 * Dataset: A set of data examples, that contain features important to solving the problem
 * Features: Important pieces of data that help us understand a problem that are fed in to a Machine Learning algorithm to help it learn.
+Chossing the right features can help distinguish useful data from the noise
 * Model: The internal representation of a phenomenon that a Machine Learning algorithm has learnt. It learns this from the data it is shown during training. The model is the output you get after training an algorithm. For example, a decision tree algorithm would be trained and produce a decision tree model.
 
 There are more resources present at [Toward Data Science](https://towardsdatascience.com) for those anyone interested in digging deeper.
