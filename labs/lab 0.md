@@ -26,7 +26,7 @@ Go to https://www.python.org/downloads/ and dowload Python 3.7.x
     * complete the installation
 
 #### Validate the python installation
-* Run `python3 --version` in a terminal to make sure python3 is installed and ready for use on your system     
+* Run `python3 --version` in a terminal on Mac or pto make sure python is installed and ready for use on your system     
         
     
 ### PIP configuration

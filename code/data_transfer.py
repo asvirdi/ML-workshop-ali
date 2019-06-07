@@ -25,7 +25,7 @@ elasticPassword = ''
 
 
 def connect_to_elastic():
-    logger.warning(msg='connecting to elastic')
+    logger.info(msg='connecting to elastic')
     connection_string = 'https://' + elasitcUsername + ':' + elasticPassword + '@' + '155fd9b2b64f446894e2a6d5f1286a2f.ece.saifg.rbc.com' + ':' + '9243'
     es = elasticsearch5.Elasticsearch([connection_string], use_ssl=False, verify_certs=False, timeout=600)
     return es
@@ -35,7 +35,7 @@ def connect_to_elastic():
 def get_data_from_elastic(index):
     es = connect_to_elastic()
     try:
-        logger.warning(msg='scanning elastic for data..')
+        logger.info(msg='scanning elastic for data..')
         res = elasticsearch5.helpers.scan(client=es, query={"query":{"match_all":{}}}, index=index, doc_type="json")
         output  =  [ item['_source'] for item in res]
         logger.warning(msg='returing output from elastic')
