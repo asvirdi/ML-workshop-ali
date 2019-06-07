@@ -42,6 +42,7 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 ### PIP configuration
 * PIP is a python package manager
 * Check if pip is configured by running `pip install elasticsearch`. If install fails, pip is not configured correctly.
+    * If install is successful, run `pip uninstall elasticsearch` to clean up.
 * It needs to be configured to allow you to download python packages through the artifactory mirror
 * Create a pip config file with one of the following configurations (you will need to make the directories if there are not existent):
     * Windows:   %APPDATA%\pip\pip.ini
