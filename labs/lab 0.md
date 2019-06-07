@@ -15,6 +15,8 @@
 
 Go to https://www.python.org/downloads/ and download Python 3.7.x (preferred)
 
+#### Download and configure Python
+
 #### On MacOS
 * Open the downloaded file. 
 * Get admin rights through *Make me Admin - Launcher* in *Self Service*
