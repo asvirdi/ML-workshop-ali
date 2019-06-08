@@ -24,10 +24,6 @@ def oneHotEncoding(data):
 
 
 
-
-
-
-
 def learnToTrainAndTestModel():
     dataframe = pandas.read_csv('../data/test_data.csv')
     headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
@@ -59,6 +55,9 @@ def learnToTrainAndTestModel():
     predictionsrf = rf.predict(encodedData[['duration', 'logged_in']])
     accuractyScorerf = accuracy_score(encodedLabels, predictionsrf)
     logger.info("accuracy score for model {}:".format(accuractyScorerf))
+
+
+
 
 
 def trainAndTestModel():
