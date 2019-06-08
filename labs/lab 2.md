@@ -111,7 +111,7 @@ and convert it to
 | 0 | 0 | 0 | 0 | 1 |
 
 
-26.Write a function to one hot encode our dataframe. You should call it oneHotEncoding and it should accept a data frame to one hot encode. Pandas provides a helper function to do this.
+26.Write a function to one hot encode our dataframe in `intrusion_detection` module. You should call it oneHotEncoding and it should accept a data frame to one hot encode. Pandas provides a helper function to do this.
 
 
 ```python
@@ -124,8 +124,8 @@ def oneHotEncoding(data):
 27.Next we will train our model using the Random Forest Classifier from scikit-learn. We will use our data to incrementally improve our model's ability to distinguish between normal and malicious connections
 We can feed selective features to our training model based on domain knowledge and/or educated intuition
 
-28.**Write a function** called `learnToTrainAndTestModel` . You will read the csv file into a dataframe in memory, `dataframe = pandas.read_csv('../data/test_data.csv')` and then
-assign column headers like the instructor did in lab 1.
+28.**Write a function** called `learnToTrainAndTestModel` in `intrusion_detection.py` file. You will read the csv file into a dataframe in memory, `dataframe = pandas.read_csv('../data/test_data.csv')` and then
+assign column headers like the instructor did in lab 1. The function is provided in `reference.py` for reference but try doing it by yourself before checking that.
 ```python
 dataframe = pandas.read_csv('../data/test_data.csv')
 headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
