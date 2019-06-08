@@ -177,7 +177,7 @@ predictionsrf = rf.predict(encodedData[['duration', 'logged_in']])
 
 ```python
 accuractyScorerf = accuracy_score(encodedLabels, predictionsrf)
-print(accuracyScorerf)
+logger.info("accuracy score for model {}:".format(accuractyScorerf))
 ```
     
     
