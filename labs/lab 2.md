@@ -14,33 +14,32 @@
 
 3. Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C:/Development)
 
-4. If you are not able to clone, the repository folder is also available in your email. You can download and open this to continue.
+4. If you are not able to clone, we can email the repository to you. You can download and open this to continue.
 
 5. Go into the **workshop** directory -- `cd workshop`
 
 6. Install the virtualenv package using pip -- `pip3 install virtualenv --user`
 
-7. You will setup a virtual environment. This makes sure any packages you install for this workshop do not intefere with your system's python packages
+7. You will setup a virtual environment. This makes sure any packages you install for this workshop do not mess with your system's python packages
 
-8. You should see 2 directories, `code` and `labs` and 1 `requirements.txt` file. The reqiurements file lists the packages you require for this workshop
+8. You should see 2 directories, `code` and `labs` and 1 `requirements.txt` file. The `requirements` file lists the packages you require for this workshop
 
 9. Make a virtual environment in the workshop directory `python3 -m virtualenv venv`
 
-10. Activate your virtual environment `source venv/bin/activate` on Macbook or `venv\bin\activate` on Windows
+10. Activate your virtual environment `source venv/bin/activate` on Mac or `venv\bin\activate` on Windows
 
 11. Run `pip install -r requirements.txt` to install packages in this virtual environment. Minimize your terminal window.
 
-12. Now we will go over the code. Data has been processed and made available in Elasticsearch for this workshop
+12. Now we will go over the code. Compressed data is present in the repo you cloned/downloaded
 
-13. Find `elasticPassword` (cmd+f `elasticPassword` on Mac or ctrl+f `elasticPassword` on Windows) in the `data_transfer` module.
+13. You will decompress it by running the `data_transfer` module. Run ` python 'code/data_transfer.py'` from a terminal or just click play if you are in an IDE.\
+The compressed file should have now been decompressed and a `test_data.csv` should appear in the `data` directory
 
-14. Fill out the string with password on the white board
+15. Go back to your terminal or IDE
 
-15. This is a temporary account configured to provide you access to Elasticsearch in this workshop
+16. Step into/open the `code` directory
 
-16. Step into the `code` directory
-
-17. The `data_transfer` module is a python file that handles the data wrangling for our workshop. It is not our prime focus
+17. The `data_transfer` module you ran handles the data wrangling for our workshop. It is not our prime focus
 
 18. The `intrusion_detection` file is where we will build our detection system
 
@@ -52,7 +51,6 @@
 ## Starting to code
 
 ```python
-import data_transfer
 from sklearn.ensemble import RandomForestClassifier
 import urllib3
 import logging
@@ -82,27 +80,16 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 
-
-22.We need a function to take data from Elastic and convert it into a Pandas DataFrame so its' easy to manipulate. Construct a function called `dataConversion` that will do this for us in `intrusion_detection`.
-
-```python
-def dataConversion(data):
-    logger.warning('converting elastic data to dataframe')
-    dataframe = pandas.DataFrame(data)
-    return dataframe
-```
-
-
-23.Circling back to the previous lab, you might have noticed some of the values in the dataset were non-numerical. This makes sense to us, but these values have no meaning to machines. We need to convert them to numerical values for the algorithm to make sense of the data.
+22.Circling back to the previous lab, you might have noticed some of the values in the dataset were non-numerical. This makes sense to us, but these values have no meaning to machines. We need to convert them to numerical values for the algorithm to make sense of the data.
 What if we give numerical values to such data? For example, for days in a week - Mon, Tues, Wed; what if we assign 1 to Mon, 2 to Tues, 3 to Wed? 
 
-24.This is a bad practice. It might lead to the algorithm placing more importance on higher numerical values
+23.This is a bad practice. It might lead to the algorithm placing more importance on higher numerical values
 
 ## One Hot Encoding
 
-25.Instead we will use One Hot Encoding to pre-process our data. The process takes categorical variables and converts it into numerical representation without an arbitrary ordering
+24.Instead we will use One Hot Encoding to pre-process our data. The process takes categorical variables and converts it into numerical representation without an arbitrary ordering
 
-26.One Hot Encoding will take this table 
+25.One Hot Encoding will take this table 
 
 | Week | 
 | ----- |
@@ -124,7 +111,7 @@ and convert it to
 | 0 | 0 | 0 | 0 | 1 |
 
 
-27.Write a function to one hot encode our dataframe. You should call it oneHotEncoding and it should accept a data frame to oneHotEncode. Pandas provides a helper function to do this.
+26.Write a function to one hot encode our dataframe. You should call it oneHotEncoding and it should accept a data frame to one hot encode. Pandas provides a helper function to do this.
 
 
 ```python
@@ -134,12 +121,29 @@ def oneHotEncoding(data):
     return encodedData
 ``` 
 
-28.Next we will train our model using the Random Forest Classifier from scikit-learn. We will use our data to incrementally improve our model's ability to distinguish between normal and malicious connections
+27.Next we will train our model using the Random Forest Classifier from scikit-learn. We will use our data to incrementally improve our model's ability to distinguish between normal and malicious connections
 We can feed selective features to our training model based on domain knowledge and/or educated intuition
 
-29.**Write a function** called `learnToTrainAndTestModel` . You will get data from elastic `data = data_transfer.get_data_from_elastic(index='kddcup-data')
-`, followed by converting into dataframe `dataframe = dataConversion(data)` and then one-hot encoding `encodedData = oneHotEncoding(dataframe)
-` . You will need to initialize a `rf = RandomForestClassifier()` and create a partial data frame of just the labels from the input encoded data.
+28.**Write a function** called `learnToTrainAndTestModel` . You will read the csv file into a dataframe in memory, `dataframe = pandas.read_csv('../data/test_data.csv')` and then
+assign column headers like the instructor did in lab 1.
+```python
+dataframe = pandas.read_csv('../data/test_data.csv')
+headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
+               "urgent", "hot", "num_failed_logins" \
+        , "logged_in", "num_compromised", "root_shell", "su_attempted", "num_root", "num_file_creations", "num_shells",
+               "num_access_files", "num_outbound_cmds" \
+        , "is_host_login", "is_guest_login", "count", "srv_count", "serror_rate", "srv_serror_rate", "rerror_rate",
+               "srv_rerror_rate", "same_srv_rate" \
+        , "diff_srv_rate", "srv_diff_host_rate", "dst_host_count", "dst_host_srv_count", "dst_host_same_srv_rate",
+               "dst_host_diff_srv_rate", "dst_host_same_src_port_rate" \
+        , "dst_host_srv_diff_host_rate", "dst_host_serror_rate", "dst_host_srv_serror_rate", "dst_host_rerror_rate",
+               "dst_host_srv_rerror_rate", "label"]
+
+    dataframe.columns = headers
+```
+ 
+ 
+29. Now you will need to do one-hot encoding `encodedData = oneHotEncoding(dataframe)` and then you will need to initialize a `rf = RandomForestClassifier()` and create a partial data frame of just the labels from the input encoded data.
 After one-hot encoding, our labels will be 
 ```python
 'label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
@@ -200,13 +204,24 @@ it calls `trainAndTestModel` instead of `learnToTrainAndTestModel`
 
 ```python
 def trainAndTestModel():
-    data = data_transfer.get_data_from_elastic(index='kddcup-data')
-    dataframe = dataConversion(data)
+    dataframe = pandas.read_csv('../data/test_data.csv')
+    headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
+               "urgent", "hot", "num_failed_logins" \
+        , "logged_in", "num_compromised", "root_shell", "su_attempted", "num_root", "num_file_creations", "num_shells",
+               "num_access_files", "num_outbound_cmds" \
+        , "is_host_login", "is_guest_login", "count", "srv_count", "serror_rate", "srv_serror_rate", "rerror_rate",
+               "srv_rerror_rate", "same_srv_rate" \
+        , "diff_srv_rate", "srv_diff_host_rate", "dst_host_count", "dst_host_srv_count", "dst_host_same_srv_rate",
+               "dst_host_diff_srv_rate", "dst_host_same_src_port_rate" \
+        , "dst_host_srv_diff_host_rate", "dst_host_serror_rate", "dst_host_srv_serror_rate", "dst_host_rerror_rate",
+               "dst_host_srv_rerror_rate", "label"]
+
+    dataframe.columns = headers
     encodedData = oneHotEncoding(dataframe)
 
-    encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
+    encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.',\
                                  'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.',\
-                                  'label_pod.', 'label_portsweep.', \
+                                  'label_pod.', 'label_portsweep.',\
                                  'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.']]
 
     logger.info(msg='traing model rf1 on data')
@@ -256,7 +271,7 @@ def trainAndTestModel():
 
     ## getting the test dataset from elastic
     #logger.info(' pulling in test data from elastic')
-    #testData = data_transfer.get_data_from_elastic(index='kddcup-data')
+
     testData = data
     logger.info('converting test data into relevant data structures')
     testDataframe = dataConversion(testData)
@@ -325,19 +340,19 @@ def trainAndTestModel():
 
 
     accuractyScorerf1 = accuracy_score(encodedTestLabels, predictionsrf1)
-    print(accuractyScorerf1)
-
+    logger.info("accuracy score for model 1: {}".format(accuractyScorerf1))
     accuractyScorerf2 = accuracy_score(encodedTestLabels, predictionsrf2)
-    print(accuractyScorerf2)
+    logger.info("accuracy score for model 2: {}".format(accuractyScorerf2))
 
     accuractyScorerf3 = accuracy_score(encodedTestLabels, predictionsrf3)
-    print(accuractyScorerf3)
+    logger.info("accuracy score for model 3: {}".format(accuractyScorerf3))
 
     accuractyScorerf4 = accuracy_score(encodedTestLabels, predictionsrf4)
-    print(accuractyScorerf4)
+    logger.info("accuracy score for model 4: {}".format(accuractyScorerf4))
 
     accuractyScorerf5 = accuracy_score(encodedTestLabels, predictionsrf5)
-    print(accuractyScorerf5)
+    logger.info("accuracy score for model 5: {}".format(accuractyScorerf5))
+
 
 ```
 

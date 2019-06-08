@@ -15,10 +15,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 
-def dataConversion(data):
-    logger.info('converting elastic data to dataframe')
-    dataframe = pandas.DataFrame(data)
-    return dataframe
 
 
 def oneHotEncoding(data):
@@ -30,7 +26,7 @@ def oneHotEncoding(data):
 
 
 def trainAndTestModel():
-    data = pandas.read_csv('../data/test_data.csv')
+    dataframe = pandas.read_csv('../data/test_data.csv')
     headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
                "urgent", "hot", "num_failed_logins" \
         , "logged_in", "num_compromised", "root_shell", "su_attempted", "num_root", "num_file_creations", "num_shells",
@@ -42,7 +38,6 @@ def trainAndTestModel():
         , "dst_host_srv_diff_host_rate", "dst_host_serror_rate", "dst_host_srv_serror_rate", "dst_host_rerror_rate",
                "dst_host_srv_rerror_rate", "label"]
 
-    dataframe = dataConversion(data)
     dataframe.columns = headers
     encodedData = oneHotEncoding(dataframe)
 
