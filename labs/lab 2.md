@@ -116,7 +116,7 @@ and convert it to
 
 ```python
 def oneHotEncoding(data):
-    logger.warning(msg='one hot encoding')
+    logger.info(msg='one hot encoding')
     encodedData = pandas.get_dummies(data)
     return encodedData
 ``` 
