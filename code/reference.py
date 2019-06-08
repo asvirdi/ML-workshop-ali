@@ -94,9 +94,7 @@ def trainAndTestModel():
     ## getting the test dataset from elastic
     #logger.info(' pulling in test data from elastic')
 
-    testData = data
-    logger.info('converting test data into relevant data structures')
-    testDataframe = dataConversion(testData)
+    testDataframe = dataframe
     logger.info('one hot encoding test data')
     encodedTestData = oneHotEncoding(testDataframe)
 
