@@ -155,9 +155,11 @@ After one-hot encoding, our labels will be
 Assign them to a variable called `encodedData`
 
 ```python
+encodedData = oneHotEncoding(dataframe)
 encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
                              'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.', 'label_pod.', 'label_portsweep.', \
                              'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.']]
+rf = RandomForestClassifier()                      
 ```
 30.Next, we will fit(train) our model on our training data set. The function will take features and labels as inputs. You can use any features that you think are the most important in grouping traffic data into malicious and normal buckets.
 
