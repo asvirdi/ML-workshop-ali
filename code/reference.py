@@ -3,7 +3,7 @@ import urllib3
 import logging
 import pandas
 from warnings import simplefilter
-from sklearn.metrics import multilabel_confusion_matrix, accuracy_score
+from sklearn.metrics import accuracy_score
 import time
 
 simplefilter(action='ignore', category=FutureWarning)
@@ -167,19 +167,18 @@ def trainAndTestModel():
 
 
     accuractyScorerf1 = accuracy_score(encodedTestLabels, predictionsrf1)
-    print(accuractyScorerf1)
-
+    logger.info("accuracy score for model 1: {}".format(accuractyScorerf1))
     accuractyScorerf2 = accuracy_score(encodedTestLabels, predictionsrf2)
-    print(accuractyScorerf2)
+    logger.info("accuracy score for model 2: {}".format(accuractyScorerf2))
 
     accuractyScorerf3 = accuracy_score(encodedTestLabels, predictionsrf3)
-    print(accuractyScorerf3)
+    logger.info("accuracy score for model 3: {}".format(accuractyScorerf3))
 
     accuractyScorerf4 = accuracy_score(encodedTestLabels, predictionsrf4)
-    print(accuractyScorerf4)
+    logger.info("accuracy score for model 4: {}".format(accuractyScorerf4))
 
     accuractyScorerf5 = accuracy_score(encodedTestLabels, predictionsrf5)
-    print(accuractyScorerf5)
+    logger.info("accuracy score for model 5: {}".format(accuractyScorerf5))
 
 
 
