@@ -74,13 +74,8 @@ The instructor will load a sample dataset into a Pandas DataFrame on his machine
 import pandas
 
 
-## pointing to directory where the data file was downloaded
-data_dir = "~/Downloads/"
-train_data_10_percent = data_dir + "kddcup.data_10_percent"
-
-
 ## function to read data into a Pandas Data Frame 
-data = pandas.read_csv(train_data_10_percent, header=None)
+data = pandas.read_csv('~/PycharmProjects/workshop/data/test_data.csv')
 
 
 ## looking into the data frame
