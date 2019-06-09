@@ -127,7 +127,7 @@ def oneHotEncoding(data):
 We can feed selective features to our training model based on domain knowledge and/or educated intuition
 
 28.**Write a function** called `learnToTrainAndTestModel` in `intrusion_detection.py` file. You will read the csv file into a dataframe in memory, `dataframe = pandas.read_csv('../data/test_data.csv')` and then
-assign column headers like the instructor did in lab 1. The function is provided in `reference.py` for reference but try doing it by yourself before checking that.
+assign column headers like the instructor did in lab 1. The function is provided in `reference.py` for reference but try doing it by yourself before checking that. The code for this step is provided below:
 ```python
 dataframe = pandas.read_csv('../data/test_data.csv')
 headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_bytes", "land", "wrong_fragment",
