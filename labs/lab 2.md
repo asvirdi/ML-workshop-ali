@@ -185,7 +185,7 @@ logger.info("accuracy score for model {}:".format(accuracyScorerf))
 ```
     
     
-33.Setup a main function and call the function you wrote to test it
+33.Setup a main function and call the function you wrote to test it. Your code should look like: 
 ```python
 def main():
     starttime = time.time()
