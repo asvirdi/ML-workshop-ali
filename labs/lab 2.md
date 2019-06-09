@@ -113,7 +113,7 @@ and convert it to
 | 0 | 0 | 0 | 0 | 1 |
 
 
-26.Write a function to one hot encode our dataframe in `intrusion_detection` module. You should call it oneHotEncoding and it should accept a data frame to one hot encode. Pandas provides a helper function to do this.
+26.Write a function to one hot encode our dataframe in `intrusion_detection` module. You should call it oneHotEncoding and it should accept a data frame to one hot encode. Pandas provides a helper function to do this. The function is provided below.
 
 
 ```python
