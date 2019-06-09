@@ -64,7 +64,7 @@ import time
 ```
 
 
-21.The following code disables some warnings and setups logging etc. to assist in our development. Copy and paste this.
+21.The following code disables some warnings and setups logging etc. to assist in our development. Copy and paste this below the above snippet.
   
   
   
