@@ -32,7 +32,7 @@
 
 12. Now we will go over the code. Compressed data is present in the repo you cloned/downloaded. Open the **workshop** directory in an IDE or text editor. 
 
-13. You will decompress it by running the `data_transfer` module. Run ` python 'code/data_transfer.py'` from a terminal from the **workshop** directory or just click play if you are in an IDE.\
+13. You will decompress it by running the `data_transfer` module. Run ` python 'code/data_transfer.py'` from a terminal from the **workshop** directory or just click play if you are in an IDE. \
 The compressed file should have now been decompressed and a `test_data.csv` should appear in the `data` directory
 
 15. Go back to your text editor/IDE
