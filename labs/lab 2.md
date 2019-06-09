@@ -26,31 +26,31 @@
 
 9. Make a virtual environment in the **workshop directory** `python3 -m virtualenv venv` on Mac or `python -m virtualenv venv` on Windows in a terminal
 
-10. From the **workshop** directory, activate your virtual environment `source venv/bin/activate` on Mac or `venv\Scripts\activate.bat` on Windows 
+10. From the **workshop** directory, activate your virtual environment `source venv/bin/activate` on Mac or `venv\Scripts\activate.bat` on Windows in a terminal
 
-11. Run `pip install -r requirements.txt` to install packages in this virtual environment. Minimize your terminal window.
+11. Run `pip install -r requirements.txt` in a terminal to install packages in this virtual environment. Minimize your terminal window.
 
 12. Now we will go over the code. Compressed data is present in the repo you cloned/downloaded. Open the **workshop** directory in an IDE or text editor. 
 
 13. You will decompress it by running the `data_transfer` module. Run ` python 'code/data_transfer.py'` from a terminal from the **workshop** directory or just click play if you are in an IDE.\
 The compressed file should have now been decompressed and a `test_data.csv` should appear in the `data` directory
 
-15. Go back to your terminal or IDE
+15. Go back to your text editor/IDE
 
-16. Step into/open the `code` directory
+16. Open the `code` directory
 
 17. The `data_transfer` module you ran handles the data wrangling for our workshop. It is not our prime focus
 
 18. The `intrusion_detection` file is where we will build our detection system
 
-19. Lets add code step by step. We encourage you to write the code yourself - code snippets are provided at end of each step\
- that can be copied over and a copy of the lab is also present in `reference.py` file. Remember indentation determines grouping of statements in Python!
+## Starting to code
+
+19. Lets add code step by step. We encourage you to write the code yourself - code snippets are provided at end of each step that can be copied over and a copy of the lab is also present in `reference.py` file. Remember indentation determines grouping of statements in Python!
 
 20. The following code imports important modules and libraries that we will when building our models. Copy and paste this to the top of the `intrusion_detection` file
 
 
 
-## Starting to code
 
 ```python
 from sklearn.ensemble import RandomForestClassifier
