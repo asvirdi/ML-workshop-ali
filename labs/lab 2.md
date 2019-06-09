@@ -3,7 +3,7 @@
 ## Estimated time for completion: 45 minutes
 ## Getting the code
 
-* The project code is available on [RBC Enterprise Github](https://rbcgithub.fg.rbc.com/kft0/workshop)
+* The project code is available on [Github](https://github.com/aliSyed68/workshop)
 
 * We are going to `clone` this code repository on our workstations using Git we setup earlier. Cloning gets us a copy of an existing Git repository.
     It is a smart way for developers and technicians to collaborate on work
@@ -12,7 +12,7 @@
 
 2. Go to a directory of your preference (eg. C:/Development)
 
-3. Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C:/Development)
+3. Run `git clone https://github.com/aliSyed68/workshop` in a directory of your preference (eg. C:/Development)
 
 4. If you are not able to clone, we can email the repository to you. You can download and open this in a text editor/IDE to continue.
 
