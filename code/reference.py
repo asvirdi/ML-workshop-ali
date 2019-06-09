@@ -5,6 +5,7 @@ import pandas
 from warnings import simplefilter
 from sklearn.metrics import accuracy_score
 import time
+import gc
 
 simplefilter(action='ignore', category=FutureWarning)
 
@@ -133,7 +134,7 @@ def trainAndTestModel():
     encodedTestData = oneHotEncoding(testDataframe)
 
     ## free up resources used in training
-    del encodedLabels, encodedData
+    del encodedLabels, encodedData, dataframe
 
     ## predictions
     logger.info('running rf1 on test data')
@@ -160,7 +161,8 @@ def trainAndTestModel():
     logger.info('running rf5 on test data')
     predictionsrf5 = rf5.predict(encodedTestData[['count','serror_rate','rerror_rate','same_srv_rate','diff_srv_rate','srv_count','srv_serror_rate','srv_rerror_rate', 'srv_diff_host_rate']])
 
-
+    del rf1, rf2, rf3, rf4, rf5
+    gc.collect()
 
 
     ## encoded test labels
