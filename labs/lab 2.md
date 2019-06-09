@@ -5,7 +5,7 @@
 
 * The project code is available on [RBC Enterprise Github](https://rbcgithub.fg.rbc.com/kft0/workshop)
 
-* We are going to `clone` this code repository on our workstations using Git we setup earlier. Cloning gets us a copy of an exisiting Git repository.
+* We are going to `clone` this code repository on our workstations using Git we setup earlier. Cloning gets us a copy of an existing Git repository.
     It is a smart way for developers and technicians to collaborate on work
 
 1. Open terminal or command prompt 
@@ -14,23 +14,23 @@
 
 3. Run `git clone https://rbcgithub.fg.rbc.com/kft0/workshop` in a directory of your preference (eg. C:/Development)
 
-4. If you are not able to clone, we can email the repository to you. You can download and open this to continue.
+4. If you are not able to clone, we can email the repository to you. You can download and open this in a text editor/IDE to continue.
 
 5. Go into the **workshop** directory -- `cd workshop`
 
-6. Install the virtualenv package using pip -- `pip3 install virtualenv --user`
+6. Install the virtualenv package using pip -- `pip3 install virtualenv --user` on Mac or `pip install virtualenv --user` on Windows
 
 7. You will setup a virtual environment. This makes sure any packages you install for this workshop do not mess with your system's python packages
 
 8. You should see 2 directories, `code` and `labs` and 1 `requirements.txt` file. The `requirements` file lists the packages you require for this workshop
 
-9. Make a virtual environment in the workshop directory `python3 -m virtualenv venv`
+9. Make a virtual environment in the **workshop directory** `python3 -m virtualenv venv` on Mac or `python -m virtualenv venv` on Windows in a terminal
 
-10. Activate your virtual environment `source venv/bin/activate` on Mac or `venv\bin\activate` on Windows
+10. From the **workshop** directory, activate your virtual environment `source venv/bin/activate` on Mac or `venv\Scripts\activate.bat` on Windows 
 
 11. Run `pip install -r requirements.txt` to install packages in this virtual environment. Minimize your terminal window.
 
-12. Now we will go over the code. Compressed data is present in the repo you cloned/downloaded
+12. Now we will go over the code. Compressed data is present in the repo you cloned/downloaded. Open the **workshop** directory in an IDE or text editor. 
 
 13. You will decompress it by running the `data_transfer` module. Run ` python 'code/data_transfer.py'` from a terminal or just click play if you are in an IDE.\
 The compressed file should have now been decompressed and a `test_data.csv` should appear in the `data` directory
@@ -43,9 +43,11 @@ The compressed file should have now been decompressed and a `test_data.csv` shou
 
 18. The `intrusion_detection` file is where we will build our detection system
 
-19. Lets add code step by step
+19. Lets add code step by step. We encourage you to write the code yourself - code snippets are provided at end of each step\
+ that can be copied over and a copy of the lab is also present in `reference.py` file. Remember indentation determines grouping of statements in Python!
 
 20. The following code imports important modules and libraries that we will when building our models. Copy and paste this to the top of the `intrusion_detection` file
+
 
 
 ## Starting to code
@@ -145,14 +147,14 @@ headers = ["duration", "protocol_type", "service", "flag", "src_bytes", "dst_byt
  
 29. Now you will need to do one-hot encoding `encodedData = oneHotEncoding(dataframe)` and then you will need to initialize a `rf = RandomForestClassifier()` and create a partial data frame of just the labels from the input encoded data.
 After one-hot encoding, our labels will be 
-```python
+```
 'label_back.', 'label_buffer_overflow.', 'label_ftp_write.', 'label_guess_passwd.', 'label_imap.', 'label_ipsweep.', 'label_land.', \
 'label_loadmodule.', 'label_multihop.', 'label_neptune.', 'label_nmap.', 'label_normal.', 'label_perl.', 'label_phf.', 'label_pod.',\
  'label_portsweep.', \
 'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.'                            
                                 
 ```
-Assign them to a variable called `encodedData`
+Assign them to a variable called `encodedData`. The code is presented below:
 
 ```python
 encodedData = oneHotEncoding(dataframe)
@@ -161,7 +163,7 @@ encodedLabels = encodedData[['label_back.', 'label_buffer_overflow.', 'label_ftp
                              'label_rootkit.', 'label_satan.', 'label_smurf.', 'label_spy.', 'label_teardrop.', 'label_warezclient.', 'label_warezmaster.']]
 rf = RandomForestClassifier()                      
 ```
-30.Next, we will fit(train) our model on our training data set. The function will take features and labels as inputs. You can use any features that you think are the most important in grouping traffic data into malicious and normal buckets.
+30.Next, we will fit(train) our model on our training data set. The function will take features and labels as inputs. You can use any features that you think are the most important in grouping traffic data into malicious and normal buckets. Add the following code to the same function:
 
 ```python
 rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
@@ -169,17 +171,17 @@ rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
 ```                             
 
 
-31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set
+31.Now, we will run our trained model on test data -- passing a similar data frame. The predict function will generate labels for the test data set. Add the following code to the same function.
 
 ```python
 predictionsrf = rf.predict(encodedData[['duration', 'logged_in']])
 ```
 
-32.You can find the accuracy score of your model by passing in the labels from the data ( the truth ) and the predictions returned by our model.
+32.You can find the accuracy score of your model by passing in the labels from the data ( the truth ) and the predictions returned by our model. Add the below code to our `learnToTrainAndTestModel` function.
 
 ```python
-accuractyScorerf = accuracy_score(encodedLabels, predictionsrf)
-logger.info("accuracy score for model {}:".format(accuractyScorerf))
+accuracyScorerf = accuracy_score(encodedLabels, predictionsrf)
+logger.info("accuracy score for model {}:".format(accuracyScorerf))
 ```
     
     
@@ -202,7 +204,7 @@ if __name__=="__main__":
 ## Seeing ML in action
 
 34.We will now try a custom `trainAndTestModel` that tries out 5 different models. Copy the code below into `intrustion_detection` module and modify your `main()` functions such that \
-it calls `trainAndTestModel` instead of `learnToTrainAndTestModel`
+it calls `trainAndTestModel` instead of `learnToTrainAndTestModel`. **After coding, wait for further instructions.**
 
 ```python
 def trainAndTestModel():
@@ -373,5 +375,8 @@ if __name__=="__main__":
 ```
 
 
-35.Inspect the logs generated by the script. The function trained 5 models on different input features and then ran them on the test data set.
+35.Close other programs before running the script. It is memory intensive and takes a few minutes to complete. Inspect the logs generated by the script. The function trained 5 models on different input features and then ran them on the test data set.
 It calculated the accuracy score for each model by comparing the result vector from the predictions with the labels vector - (the `truth`) in our case.
+
+
+### End of Lab 2

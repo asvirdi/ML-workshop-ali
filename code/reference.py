@@ -53,8 +53,8 @@ def learnToTrainAndTestModel():
     rf = RandomForestClassifier()
     rf.fit(encodedData[['duration', 'logged_in']], encodedLabels)
     predictionsrf = rf.predict(encodedData[['duration', 'logged_in']])
-    accuractyScorerf = accuracy_score(encodedLabels, predictionsrf)
-    logger.info("accuracy score for model {}:".format(accuractyScorerf))
+    accuracyScorerf = accuracy_score(encodedLabels, predictionsrf)
+    logger.info("accuracy score for model {}:".format(accuracyScorerf))
 
 
 

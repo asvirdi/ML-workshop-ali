@@ -25,15 +25,16 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 
 
 #### On Windows
-* Download the python executable for windows. 
+* Download the **64 bit** python executable for windows. 
 * Open it, accept the license and follow the prompts
 * **if the installation does not continue due to no admin rights, follow these steps**
     * Uncheck "install for all users" option
     * Go for the custom installation
-    * On next screen specify the directory path for which your user have full access on the computer
+    * On next screen specify the directory path for which your user has full access on the computer
     * Uncheck "create shortcuts for installed application" option
     * Make sure "Add python to environment variable" option is Unchecked
     * complete the installation
+<!-- validate custom install on windows -->
 
 #### Validate the python installation
 * Run `python3 --version` in a terminal on Mac or `python --version` in a command prompt on Windows make sure python is installed and ready for use on your system     
@@ -47,7 +48,8 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 * Create a pip config file with one of the following configurations (you will need to make the directories if they do not already exist):
     * Windows:   %APPDATA%\pip\pip.ini
     * Unix: $HOME/.config/pip/pip.conf
-    * Mac:  $HOME/.pip/pip.conf   
+    * Mac:  $HOME/.pip/pip.conf
+* Ensure the config files have the exact extensions as listed above. On Windows, the default file might be created as `pip.ini.txt`. If this is the case, rename the file for the correct format.   
 
 
 * Open the file in your favorite text editor and add the following code:
@@ -56,6 +58,7 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 index-url = https://rbcartifactory.fg.rbc.com/artifactory/api/pypi/pypi/simple
 trusted-host = rbcartifactory.fg.rbc.com 
 ```   
+
 
 
 
@@ -79,6 +82,11 @@ trusted-host = rbcartifactory.fg.rbc.com
 * Use the same credentials that you login with on your computer
 
 
+
+
+#### Restart any open terminals so they can pick up the above changes
+
+### End of Lab 0
 
 
 
