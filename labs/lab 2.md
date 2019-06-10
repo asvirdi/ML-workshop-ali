@@ -14,7 +14,7 @@
 
 3. Run `git clone https://github.com/aliSyed68/workshop` in a directory of your preference (eg. C:/Development)
 
-4. If you are not able to clone, we can email the repository to you. You can download and open this in a text editor/IDE to continue.
+4. If you are not able to clone, we can email the repository to you. You can download and `Open` this in a text editor/IDE to continue.
 
 5. Go into the **workshop** directory -- `cd workshop`
 
