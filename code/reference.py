@@ -218,7 +218,7 @@ def main():
     starttime = time.time()
     logger.info('start time: {}'.format(starttime))
     learnToTrainAndTestModel()
-    #trainAndTestModel()
+    trainAndTestModel()
 
     endtime = time.time() - starttime
     logger.info('run time: {}'.format(endtime))
