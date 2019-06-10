@@ -3,7 +3,7 @@ import urllib3
 import logging
 import pandas
 from warnings import simplefilter
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, multilabel_confusion_matrix
 import time
 import gc
 
@@ -134,6 +134,7 @@ def trainAndTestModel():
     encodedTestData = oneHotEncoding(testDataframe)
 
     ## free up resources used in training
+    # uncomment to get confusion matrixes
     del encodedLabels, encodedData, dataframe
 
     ## predictions
@@ -175,8 +176,8 @@ def trainAndTestModel():
 
     logger.info('calculating confusion matrixes')
     ## comparing predictions with the true labels
-    # confusionMatrix1 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf1)
-    # print(confusionMatrix1)
+    #confusionMatrix1 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf1)
+    #print(confusionMatrix1)
     #
     # confusionMatrix2 = multilabel_confusion_matrix(encodedTestLabels, predictionsrf2)
     # print(confusionMatrix2)
@@ -217,7 +218,7 @@ def trainAndTestModel():
 def main():
     starttime = time.time()
     logger.info('start time: {}'.format(starttime))
-    learnToTrainAndTestModel()
+    #learnToTrainAndTestModel()
     trainAndTestModel()
 
     endtime = time.time() - starttime
