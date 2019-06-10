@@ -275,7 +275,7 @@ def trainAndTestModel():
 
    
 
-    testData = data
+    testData = dataframe
     logger.info('converting test data into relevant data structures')
     testDataframe = dataConversion(testData)
     logger.info('one hot encoding test data')
