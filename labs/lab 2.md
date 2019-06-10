@@ -273,16 +273,14 @@ def trainAndTestModel():
 
 
 
-   
 
-    testData = dataframe
-    logger.info('converting test data into relevant data structures')
-    testDataframe = dataConversion(testData)
+
+    testDataframe = dataframe
     logger.info('one hot encoding test data')
     encodedTestData = oneHotEncoding(testDataframe)
 
     ## free up resources used in training
-    del encodedLabels, encodedData
+    del encodedLabels, encodedData, dataframe
 
     ## predictions
     logger.info('running rf1 on test data')
