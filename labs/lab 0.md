@@ -44,6 +44,7 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 * PIP is a python package manager
 * Check if pip is configured by running `pip install elasticsearch`. If install fails, pip is not configured correctly.
     * If install is successful, run `pip uninstall elasticsearch` to clean up.
+#### If you are on firms' machine then do the following configuration
 * Pip needs to be configured to allow you to download python packages through the artifactory mirror
 * Create a pip config file with one of the following configurations (you will need to make the directories if they do not already exist):
     * Windows:   %APPDATA%\pip\pip.ini
@@ -64,7 +65,7 @@ trusted-host = rbcartifactory.fg.rbc.com
 
     
     
-### Git Setup
+### Git Setup or ask for a zipped version of the lab
 
 #### Windows
 * Download the executable [for windows here](https://git-scm.com/download/win)
@@ -77,7 +78,7 @@ trusted-host = rbcartifactory.fg.rbc.com
 
 #### Setting credentials for git
 * Open a terminal/command prompt and type `git config --global credential.helper store
-`
+
 * The next time you pull or push, git will prompt you for credentials
 * Use the same credentials that you login with on your computer
 
