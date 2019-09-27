@@ -45,20 +45,8 @@ Go to [this link](https://www.python.org/downloads/) and download Python 3.7.x (
 * Check if pip is configured by running `pip install elasticsearch`. If install fails, pip is not configured correctly.
     * If install is successful, run `pip uninstall elasticsearch` to clean up.
 #### If you are on firms' machine then do the following configuration
-* Pip needs to be configured to allow you to download python packages through the artifactory mirror
-* Create a pip config file with one of the following configurations (you will need to make the directories if they do not already exist):
-    * Windows:   %APPDATA%\pip\pip.ini
-    * Unix: $HOME/.config/pip/pip.conf
-    * Mac:  $HOME/.pip/pip.conf
-* Ensure the config files have the exact extensions as listed above. On Windows, the default file might be created as `pip.ini.txt`. If this is the case, rename the file for the correct format.   
+* Pip needs to be configured to allow you to download python packages through the mirror
 
-
-* Open the file in your favorite text editor and add the following code:
-```
-[global]
-index-url = https://rbcartifactory.fg.rbc.com/artifactory/api/pypi/pypi/simple
-trusted-host = rbcartifactory.fg.rbc.com 
-```   
 
 
 
@@ -69,7 +57,7 @@ trusted-host = rbcartifactory.fg.rbc.com
 
 #### Windows
 * Download the executable [for windows here](https://git-scm.com/download/win)
-* Follow this document [git setup on windows](https://rbc-confluence.fg.rbc.com:8443/display/CPS/Installing+Git+Bash+On+Your+Local?preview=%2F38736323%2F38736322%2FInstalling+Git+Bash+On+Your+Local.docx)
+
 
 #### MacOS
 * Download Git from [git executable for Mac](https://git-scm.com/download/mac)
